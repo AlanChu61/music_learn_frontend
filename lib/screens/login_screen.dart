@@ -6,6 +6,9 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Retrieve the role (student or teacher) from the arguments
+    final String role = ModalRoute.of(context)!.settings.arguments as String;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
@@ -27,7 +30,14 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/student_dashboard');
+                // Implement your login logic here
+
+                // Route to the correct dashboard based on the role
+                if (role == 'student') {
+                  Navigator.pushNamed(context, '/student_dashboard');
+                } else if (role == 'teacher') {
+                  Navigator.pushNamed(context, '/teacher_dashboard');
+                }
               },
               child: Text('Login'),
             ),

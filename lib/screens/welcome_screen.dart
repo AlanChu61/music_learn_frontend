@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/login');
+                    Navigator.pushNamed(context, '/login', arguments: 'student');
                   },
                   child: CircleAvatar(
                     radius: 50,
@@ -31,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/login'); // Later, you might want to distinguish teacher login
+                    Navigator.pushNamed(context, '/login', arguments: 'teacher');
                   },
                   child: CircleAvatar(
                     radius: 50,

@@ -4,6 +4,8 @@ import 'screens/signup_screen.dart';
 import 'screens/student_dashboard_screen.dart';
 import 'screens/course_screen.dart';
 import 'screens/welcome_screen.dart';
+import 'screens/teacher_dashboard_screen.dart';
+import 'screens/teacher_course_screen.dart';
 
 void main() {
   runApp(MusicLearnApp());
@@ -23,7 +25,9 @@ class MusicLearnApp extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/signup': (context) => SignUpScreen(),
         '/student_dashboard': (context) => StudentDashboardScreen(),
+        '/teacher_dashboard': (context) => TeacherDashboardScreen(),
         '/courses': (context) => CourseScreen(),
+        '/teacher_courses': (context) => TeacherCourseScreen(),
       },
     );
   }

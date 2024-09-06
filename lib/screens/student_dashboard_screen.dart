@@ -104,15 +104,9 @@ class _StudentDashboardScreenState extends State<StudentDashboardScreen> {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/courses');
+                          Navigator.pushNamed(context, '/student_courses'); 
                         },
                         child: Text('Go to Courses'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Additional student-specific actions
-                        },
-                        child: Text('View Student Info'),
                       ),
                     ],
                   ),

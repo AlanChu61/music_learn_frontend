@@ -4,12 +4,12 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/student_submission_item.dart';
 
-class TeacherCourseScreen extends StatefulWidget {
+class StudentCourseScreen extends StatefulWidget {
   @override
-  _TeacherCourseScreenState createState() => _TeacherCourseScreenState();
+  _StudentCourseScreenState createState() => _StudentCourseScreenState();
 }
 
-class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
+class _StudentCourseScreenState extends State<StudentCourseScreen> {
   List<Map<String, dynamic>> courses = [];
   bool isLoading = true;
   String errorMessage = '';
@@ -61,7 +61,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Teacher Courses'),
+        title: Text('Student Courses'),
       ),
       body: isLoading
           ? Center(child: CircularProgressIndicator())
@@ -82,7 +82,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
                             ),
                             Text('Time: ${courses[index]['schedule']}'),
                             SizedBox(height: 10),
-                           Column(
+                            Column(
                               children: (courses[index]['submissions'] as List).map((submission) {
                                 return StudentSubmissionItem(
                                   studentName: submission['user_name'], // Display user_name instead of user_id
